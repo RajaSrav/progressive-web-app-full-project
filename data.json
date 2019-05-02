@@ -1,0 +1,50 @@
+{
+	"data":[
+		{
+			"id":1,
+			"name":"BHARATH KUMAR REDDY",
+			"email":"bharathkondreddy30@gmail.com",
+			"phone":"1234567890",
+			"education":[
+				{
+					"degree":"B-tech",
+					"institute":"SVIT Engg college",
+					"data":["72%","2016-20"]
+				},
+				{
+					"degree":"intermediate",
+					"institute":"SSS college",
+					"data":["88%","2014-16"]
+				},
+				{
+					"degree":"Tenth",
+					"institute":"Sharon School",
+					"data":["77%","2013-14"]
+				}
+			]
+		},
+		{
+			"id":2,
+			"name":"srinika",
+			"email":"babukondreddy30@@gmail.com",
+			"phone":"1234567890",
+			"education":[
+				{
+					"degree":"B-tech",
+					"institute":"SVIT Engg college",
+					"data":["72%","2016-20"]
+				},
+				{
+					"degree":"INTERMEDIATE",
+					"institute":"SSS Engg college",
+					"data":["72%","2014-16"]
+				},
+				{
+					"degree":"TENTH",
+					"institute":"SHARON SCHOOL",
+					"data":["72%","2013-14"]
+				}
+			]
+		}
+	]
+}

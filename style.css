@@ -1,0 +1,99 @@
+.parent{
+	display:flex;
+	flex-direction:row;
+	justify-content: center;
+}
+.main{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	justify-content: center;
+}
+.sub1{
+	width:84%;
+	border:2px solid #ddd;
+	margin:1%;
+	padding:1%;
+	box-shadow:3px 3px 3px #ddd;
+}
+.sub{
+	width:40%;
+	padding:1%;
+	margin:1%;
+	border:2px solid #ddd;
+	box-shadow:3px 3px 3px #ddd;
+}
+
+.sub h2{
+	color:#114F87;
+	text-shadow:2px 2px 2px #ddd;
+}
+
+.sub1 h2{
+	color:#114F87;
+	text-shadow:2px 2px 2px #ddd;
+}
+
+input,
+select{
+	margin:1%;
+	width:90%;
+}
+
+header{
+	background:#136AB7;
+	color:#fff;
+	padding:1%;
+	text-align: center;
+}
+.header2{
+	background:#BED9F1;
+	padding:1%;
+}
+a img{
+	width:50px;
+	height:auto;
+}
+.child{
+	width:20%;
+	border:1px solid #000;
+	box-shadow:3px 3px 3px #ddd;
+	padding:2%;
+	margin:2%;
+}
+
+img{
+	width:150px;
+	height:auto;
+	display:block;
+	margin:0 auto;
+}
+
+h2{
+	text-align:center;
+}
+
+
+
+/*Resume.html*/
+.main{
+	display:flex;
+	flex-direction:row;
+	justify-content: center;
+}
+
+.leftChild{
+	width:22%;
+	margin: 1%;
+	padding:1%;
+	border:1px solid #000;
+	box-shadow:3px 3px 3px #ddd;
+}
+
+.rightChild{
+	width:62%;
+	margin: 1%;
+	padding:1%;
+	border:1px solid #000;
+	box-shadow:3px 3px 3px #ddd;
+}

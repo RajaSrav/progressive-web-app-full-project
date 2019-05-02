@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>::Task 9::</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<!-- Main Div -->
+<div class="main">
+
+
+<!-- Left Child -->
+<div class="leftChild">
+
+
+</div>
+
+
+
+<!-- RightChild -->
+<div class="rightChild">
+
+
+</div>
+
+</div>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+	var query=window.location.search.substring(1).split("&");
+	for (var i = 0, max=query.length; i<max; i++) {
+		var param=query[i].split("=");
+		console.log(param);
+
+	}
+	console.log(param[1]);
+
+	var request;
+	var open;
+	var tx;
+	var store;
+	var indexedDB=window.indexedDB || window.msIndexedDB || window.webkitIndexedDB || window.mozIndexedDB;
+
+	request=indexedDB.open("myDb",1);
+
+	request.onerror=function(e){
+		console.log("error:"+errorCode);
+	}
+
+	request.onupgradeneeded=function(e){
+		open=e.target.result;
+		store=open.createObjectStore("resume", {keyPath:"name"});
+	}
+
+	request.onsuccess=function(e){
+		open=e.target.result;
+		tx=open.transaction("resume","readwrite");
+		store=tx.objectStore("resume");
+		var info=store.get(param[1]);
+		info.onsuccess=function(e){
+			var finalresult=e.target.result;
+			console.log(finalresult);
+			profile(finalresult);
+			education(finalresult.education);
+		}
+	}
+
+
+	var leftChild=document.querySelector(".leftChild");
+	var rightChild=document.querySelector(".rightChild");
+
+	function profile(d){
+// console.log(d.name);
+var img=document.createElement("img");
+img.src="man.svg";
+img.alt=d.name;
+leftChild.append(img);
+
+var name=document.createElement("h2");
+name.textContent=d.name;
+leftChild.append(name);
+var hr=document.createElement("hr");
+leftChild.append(hr);
+
+var mobile=document.createElement("p");
+mobile.textContent=d.mobile;
+leftChild.append(mobile);
+	}
+
+	function education(edu){
+var heading=document.createElement("h2");
+heading.textContent="Education Qualifications";
+rightChild.append(heading);
+var hr=document.createElement("hr");
+rightChild.append(hr);
+var ul=document.createElement("ul");
+rightChild.appendChild(ul);
+for(var i in edu){
+	var li=document.createElement("li");
+	li.textContent=edu[i].degree;
+	li.style.fontWeight="550";
+	li.style.textDecoration="underline";
+	ul.append(li);
+
+	var inst=document.createElement("p");
+	inst.textContent=edu[i].institute;
+	ul.append(inst);
+
+	var branch=document.createElement("p");
+	branch.textContent=edu[i].branch;
+	ul.append(branch);
+
+	var year=document.createElement("p");
+	year.textContent=edu[i].year;
+	ul.append(year);
+
+	var score=document.createElement("p");
+	score.textContent=edu[i].score+"%";
+	ul.append(score);
+}
+	}
+</script>
